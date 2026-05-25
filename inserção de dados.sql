@@ -1,10 +1,12 @@
 #1) INSERÇÃO DOS FUNCIONÁRIOS
+
 #INSERT INTO funcionarios
 #(nome_funcionario, sobrenome_funcionario, email, celular_funcionario, cargo, salario)
 #VALUES
 #('nome do funcionário', 'sobrenome do funcionário', 'email do funcionário', '11122233344', 'cargo do funcionário', 0);
 
 #RECEPCIONISTA
+
 INSERT INTO funcionarios
 (nome_funcionario, sobrenome_funcionario, email, celular_funcionario, cargo, salario)
 VALUES
@@ -16,6 +18,7 @@ VALUES
 ('Luis Gustavo', 'Costa', 'luis.costa@gmail.com', '19987091378', 'Recepcionista', 2300);
 
 #FAXINEIRO
+
 INSERT INTO funcionarios
 (nome_funcionario, sobrenome_funcionario, email, celular_funcionario, cargo, salario)
 VALUES
@@ -27,6 +30,7 @@ VALUES
 ('Fabiana', 'Melo', 'fabi.contato@gmail.com', '19990075430', 'Faxineiro', 1700);
 
 #DENTISTA
+
 INSERT INTO funcionarios
 (nome_funcionario, sobrenome_funcionario, email, celular_funcionario, cargo, salario)
 VALUES
@@ -56,56 +60,62 @@ INSERT INTO convenios (nome_convenio) VALUES ('Amil');
 
 #3) INSERÇÃO DOS CLIENTES
 #INSERT INTO clientes
-#(nome_cliente, sobrenome_cliente, nome_social, idade, celular_cliente, cpf, id_convenio)
+#(nome_cliente, sobrenome_cliente, nome_social, data_nascimento, celular_cliente, cpf, id_convenio)
 #VALUES
-#('nome do cliente', 'sobrenome do cliente', 'nome social (opcional)', 'idade', '11122233344', '00000000000', id_do_convenio);
+#('nome do cliente', 'sobrenome do cliente', 'nome social (opcional)', 'aaaa-mm-dd', '11122233344', '00000000000', id_do_convenio);
 
 INSERT INTO clientes
-(nome_cliente, sobrenome_cliente, nome_social, idade, celular_cliente, cpf, id_convenio)
+(nome_cliente, sobrenome_cliente, nome_social, data_nascimento, celular_cliente, cpf, id_convenio)
 VALUES
-('Ana', 'Silva', NULL, '25', '19987654321', '12345678901', 2);
+('Ana', 'Silva', 'Aninha', '2001-05-25', '19987654321', '12345678901', 2); -- 25 anos
 
 INSERT INTO clientes
-(nome_cliente, sobrenome_cliente, nome_social, idade, celular_cliente, cpf, id_convenio)
+(nome_cliente, sobrenome_cliente, nome_social, data_nascimento, celular_cliente, cpf, id_convenio)
 VALUES
-('Carlos', 'Eduardo', NULL, '34', '19976543210', '23456789012', 1);
+('Carlos', 'Eduardo', 'Carleto', '1992-05-25', '19976543210', '23456789012', 1); -- 34 anos
 
 INSERT INTO clientes
-(nome_cliente, sobrenome_cliente, nome_social, idade, celular_cliente, cpf, id_convenio)
+(nome_cliente, sobrenome_cliente, nome_social, data_nascimento, celular_cliente, cpf, id_convenio)
 VALUES
-('Mariana', 'Costa', NULL, '28', '19965432109', '34567890123', 1);
+('Mariana', 'Costa', NULL, '1998-05-25', '19965432109', '34567890123', 1); -- 28 anos
 
 INSERT INTO clientes
-(nome_cliente, sobrenome_cliente, nome_social, idade, celular_cliente, cpf, id_convenio)
+(nome_cliente, sobrenome_cliente, nome_social, data_nascimento, celular_cliente, cpf, id_convenio)
 VALUES
-('João', 'Pedro', NULL, '45', '19954321098', '45678901234', 1);
+('João', 'Pedro', NULL, '1981-05-25', '19954321098', '45678901234', 1); -- 45 anos
 
 INSERT INTO clientes
-(nome_cliente, sobrenome_cliente, nome_social, idade, celular_cliente, cpf, id_convenio)
+(nome_cliente, sobrenome_cliente, nome_social, data_nascimento, celular_cliente, cpf, id_convenio)
 VALUES
-('Fernanda', 'Lima', NULL, '19', '19943210987', '56789012345', 3);
+('Fernanda', 'Lima', NULL, '2007-05-25', '19943210987', '56789012345', 3); -- 19 anos
 
 INSERT INTO clientes
-(nome_cliente, sobrenome_cliente, nome_social, idade, celular_cliente, cpf, id_convenio)
+(nome_cliente, sobrenome_cliente, nome_social, data_nascimento, celular_cliente, cpf, id_convenio)
 VALUES
-('Ricardo', 'Mendes', NULL, '52', '19932109876', '67890123456', 1);
+('Ricardo', 'Mendes', 'Mendão', '1974-05-25', '19932109876', '67890123456', 1);
 
 
-#4) INSERÇÃO DE AGENDAMENTOS
+#4) INSERÇÃO DE AGENDAMENTOS EM QUE O CLIENTE POSSUI CONVÊNIO
 #INSERT INTO agendamentos
 #(id_funcionario, id_cliente, data_consulta, valor, pago)
 #VALUES
-#(id_do_funcionario, id_do_cliente, 'aaaa-mm-dd hh:mm:ss', valor_da_consulta, TRUE/FALSE);
+#(id_do_funcionario, id_do_cliente, 'aaaa-mm-dd hh:mm:ss', 0, TRUE/FALSE);
 
 INSERT INTO agendamentos
 (id_funcionario, id_cliente, data_consulta, valor, pago)
 VALUES
-(5, 1, '2026-05-20 09:00:00', DEFAULT, FALSE);
+(5, 1, '2026-05-20 09:00:00', 0, FALSE);
 
 INSERT INTO agendamentos
 (id_funcionario, id_cliente, data_consulta, valor, pago)
 VALUES
-(7, 5, '2026-05-21 08:00:00', DEFAULT, FALSE);
+(7, 5, '2026-05-21 08:00:00', 0, FALSE);
+
+#4) INSERÇÃO DE AGENDAMENTOS EM QUE O CLIENTE  NÃO POSSUI CONVÊNIO
+#INSERT INTO agendamentos
+#(id_funcionario, id_cliente, data_consulta, valor, pago)
+#VALUES
+#(id_do_funcionario, id_do_cliente, 'aaaa-mm-dd hh:mm:ss', valor_consulta, TRUE/FALSE);
 
 INSERT INTO agendamentos
 (id_funcionario, id_cliente, data_consulta, valor, pago)
@@ -126,5 +136,3 @@ INSERT INTO agendamentos
 (id_funcionario, id_cliente, data_consulta, valor, pago)
 VALUES
 (7, 6, '2026-05-22 14:00:00', 150, FALSE);
-
-
