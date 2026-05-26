@@ -96,20 +96,26 @@ VALUES
 
 
 #4) INSERÇÃO DE AGENDAMENTOS EM QUE O CLIENTE POSSUI CONVÊNIO
+
 #INSERT INTO agendamentos
 #(id_funcionario, id_cliente, data_consulta, valor, pago)
 #VALUES
-#(id_do_funcionario, id_do_cliente, 'aaaa-mm-dd hh:mm:ss', 0, TRUE/FALSE);
+#(id_do_funcionario, id_do_cliente, 'aaaa-mm-dd hh:mm:ss', 0, TRUE);
 
 INSERT INTO agendamentos
 (id_funcionario, id_cliente, data_consulta, valor, pago)
 VALUES
-(5, 1, '2026-05-20 09:00:00', 0, FALSE);
+(5, 1, '2026-05-20 09:00:00', 0, TRUE);
 
 INSERT INTO agendamentos
 (id_funcionario, id_cliente, data_consulta, valor, pago)
 VALUES
-(7, 5, '2026-05-21 08:00:00', 0, FALSE);
+(5, 1, '2026-12-20 09:00:00', 0, TRUE);
+
+INSERT INTO agendamentos
+(id_funcionario, id_cliente, data_consulta, valor, pago)
+VALUES
+(7, 5, '2026-05-21 08:00:00', 0, TRUE);
 
 #4) INSERÇÃO DE AGENDAMENTOS EM QUE O CLIENTE  NÃO POSSUI CONVÊNIO
 #INSERT INTO agendamentos
@@ -130,9 +136,19 @@ VALUES
 INSERT INTO agendamentos
 (id_funcionario, id_cliente, data_consulta, valor, pago)
 VALUES
-(6, 4, '2026-05-22 09:30:00', 180, FALSE);
+(6, 4, '2026-09-22 09:30:00', 180, FALSE);
 
 INSERT INTO agendamentos
 (id_funcionario, id_cliente, data_consulta, valor, pago)
 VALUES
-(7, 6, '2026-05-22 14:00:00', 150, FALSE);
+(6, 5, '2026-09-22 09:30:00', 180, FALSE);
+
+INSERT INTO agendamentos
+(id_funcionario, id_cliente, data_consulta, valor, pago)
+VALUES
+(7, 6, '2026-05-26 14:00:00', 150, FALSE);
+
+INSERT INTO agendamentos
+(id_funcionario, id_cliente, data_consulta, valor, pago)
+VALUES
+(7, 6, '2026-02-26 14:00:00', 150, TRUE);
