@@ -1,7 +1,7 @@
 ## SEUC-4
 ## Sistema de Escoamento de Unidades de Carga - Refinaria Delta-9
 
-Projeto desenvolvido para a disciplina de Algoritmos de Programacao, Projetos e Computacao (APPC - Pratica).
+Projeto desenvolvido para a disciplina de Algoritmos de Programacao, Projetos e Computacao (APPC - Pratica), realizado em grupo no 1° semestre.
 
 ## Descricao do projeto
 O SEUC-4 foi criado para monitorar o Duto Principal de Escoamento (DPE) da Refinaria Delta-9. Durante um turno, o sistema recebe leituras de pressao hidrodinamica em UPC, processa cada valor imediatamente, aplica o ajuste termico, classifica a estabilidade do duto e verifica se existe risco de travamento por duas leituras consecutivas na Zona Vermelha.
