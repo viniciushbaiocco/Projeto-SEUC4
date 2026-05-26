@@ -221,10 +221,15 @@ ORDER BY total_clientes DESC;
 
 #1-17) VISUALIZAR CONFLITO DE HORÁRIOS
 
-SELECT id_funcionario, data_consulta, COUNT(*) as consultas_no_mesmo_horario
-FROM agendamentos
-GROUP BY id_funcionario, data_consulta
+SELECT a.id_funcionario, f.nome_funcionario, a.data_consulta, COUNT(*) as consultas_no_mesmo_horario
+FROM agendamentos a
+JOIN funcionarios f
+ON a.id_funcionario = f.id_funcionario
+WHERE DATE(data_consulta) >= CURRENT_DATE() 
+GROUP BY id_funcionario, data_consulta     
 HAVING COUNT(*) > 1;
+       
+#1.17-1) IMPLEMENTAR AS CONSULTAS EM CONFLITO
 
 #2) COMANDOS TABELA CLIENTES / CONVENIOS
 
@@ -265,6 +270,7 @@ UPDATE clientes SET nome_social = NULL
 WHERE id_cliente = 1;
 
 #2-5) EXCLUSÃO DE UM CLIENTE QUE POSSUI CONSULTAS
+
 #DELETE FROM agendamentos 
 #WHERE id_cliente = X;
 
